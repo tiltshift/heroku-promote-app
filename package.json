@@ -1,7 +1,7 @@
 {
-  "name": "heroku-deploy",
+  "name": "heroku-promote-app",
   "version": "1.0.0",
-  "description": "A simple github action that dynamically deploys an app to heroku",
+  "description": "A simple github action that promotes a given heroku up down the pipeline",
   "main": "index.js",
   "scripts": {
     "test": "node test",
@@ -9,18 +9,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AkhileshNS/heroku-deploy.git"
+    "url": "git+https://github.com/tiltshift/heroku-promote-app.git"
   },
   "keywords": [
     "heroku",
+    "promote",
+    "pipeline",
     "github",
-	"github-actions"
+    "github-actions"
   ],
-  "author": "AkhileshNS",
+  "author": "Tilt/Shift",
   "bugs": {
-    "url": "https://github.com/AkhileshNS/heroku-deploy/issues"
+    "url": "https://github.com/tiltshift/heroku-promote-app/issues"
   },
-  "homepage": "https://github.com/AkhileshNS/heroku-deploy#readme",
+  "homepage": "https://github.com/tiltshift/heroku-promote-app#readme",
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.2.0"

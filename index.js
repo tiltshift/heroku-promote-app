@@ -1,5 +1,5 @@
-import { getInput, setOutput, setFailed } from '@actions/core'
-import { execSync } from 'child_process'
+const core = require('@actions/core')
+const { execSync } = require('child_process')
 
 // Support Functions
 const createCatFile = ({ email, api_key }) => `cat >~/.netrc <<EOF
@@ -13,9 +13,9 @@ EOF`
 
 // Input Variables
 let heroku = {}
-heroku.api_key = getInput('heroku_api_key')
-heroku.email = getInput('heroku_email')
-heroku.app_name = getInput('heroku_app_name')
+heroku.api_key = core.getInput('heroku_api_key')
+heroku.email = core.getInput('heroku_email')
+heroku.app_name = core.getInput('heroku_app_name')
 
 // Program logic
 try {
@@ -27,7 +27,10 @@ try {
 
   execSync(`heroku pipelines:promote -a ${heroku.app_name}`)
 
-  setOutput('status', 'Successfully promoted heroku app ' + heroku.app_name)
+  core.setOutput(
+    'status',
+    'Successfully promoted heroku app ' + heroku.app_name,
+  )
 } catch (err) {
-  setFailed(err.toString())
+  core.setFailed(err.toString())
 }

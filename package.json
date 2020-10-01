@@ -25,6 +25,6 @@
   "homepage": "https://github.com/tiltshift/heroku-promote-app#readme",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.2.0"
+    "@actions/core": "^1.2.6"
   }
 }
